@@ -1,7 +1,9 @@
 import React, { useContext } from "react";
 import CartCtx from "../store/cartCtx";
 import MenuItem from "./MenuItem";
-import { Table } from "react-bootstrap";
+import { Container } from "react-bootstrap";
+import classes from "./Menu.module.css"
+
 
 const Menu = () => {
     const cartCtx = useContext(CartCtx);
@@ -10,10 +12,16 @@ const Menu = () => {
     </MenuItem>)
 
     return (
-        <Table striped>
-            {MenuItems}
-        </Table>
+        <>
+            <Container className={classes["cart-title"]}>
+                <h4>Items Ready to add to Cart</h4>
+            </Container>
+            <ul className={classes.menu}>
+                {MenuItems}
+            </ul>
+        </>
     )
+
 
 }
 

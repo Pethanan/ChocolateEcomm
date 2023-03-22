@@ -1,0 +1,22 @@
+.header
+{
+  display: flex;
+    justify-content: space-between;
+    padding: 15px 50px;
+    background-color: rgba(10, 10, 30, 0.872);
+    color: white;
+}
+
+.links
+{
+    justify-content: end;
+    color: white;
+    text-decoration: None;
+    font-weight: bold;
+    }
+
+.links:hover
+{
+    color: yellow;
+    
+}

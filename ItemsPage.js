@@ -1,6 +1,8 @@
 import React from "react";
+import { Container, Row, Col } from "react-bootstrap";
 import Item from "../components/Item";
 import Menu from "../components/Menu";
+import classes from "./ItemsPage.module.css"
 
 const items = [{ id: 1, name: "Chocolate 1", price: 10, description: "Great Chocolate 1" },
 { id: 2, name: "Chocolate 2", price: 20, description: "Great Chocolate 2" },
@@ -12,19 +14,20 @@ const Items = () => {
 
 
     return (
-        <>
-            <table style={{ margin: "30px" }}>
-                <tr>
-                    <th>Name</th>
-                    <th>Price</th>
-                    <th>Description</th>
-                    <th>Order</th>
-                </tr>
+        <Container>
+            <Container className={classes["available-items"]}>
+                <Row className={classes.mainrow}>
+                    <Col>Item Name</Col>
+                    <Col>Price</Col>
+                    <Col>Description</Col>
+                    <Col>Click the button to Add!</Col>
+                </Row>
+
                 {itemsList}
-            </table >
+            </Container >
             <Menu></Menu>
 
-        </>
+        </Container>
 
     );
 

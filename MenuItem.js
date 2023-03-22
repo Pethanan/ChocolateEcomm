@@ -1,5 +1,7 @@
 import React, { useContext } from "react";
 import CartCtx from "../store/cartCtx";
+import { Col, Row, Button } from "react-bootstrap";
+import classes from "./MenuItem.module.css"
 
 const MenuItem = (props) => {
 
@@ -15,15 +17,19 @@ const MenuItem = (props) => {
         cartCtx.addToCart(props.item, 3)
     }
     return (
-        <tr>
-            <td>{props.item.name}</td>
-            <td>{props.item.price}</td>
-            <td>{props.item.price}</td>
-            <button onClick={buttonOneHandler}>Order 1 </button>
-            <button onClick={buttonTwoHandler}>Order 2 </button>
-            <button onClick={buttonThreeHandler}>Order 3 </button>
+        <li className={classes["menu-item"]}>
+            <Row>
+                <Col>{props.item.name}</Col>
+                <Col>{props.item.price}</Col>
+                <Col>{props.item.description}</Col>
+                <Col>                <Button variant="primary" onClick={buttonOneHandler}>Order 1 </Button>
+                </Col>
+                <Col><Button onClick={buttonTwoHandler}>Order 2 </Button></Col>
+                <Col>                <Button onClick={buttonThreeHandler}>Order 3 </Button>
+                </Col>
+            </Row>
 
-        </tr>
+        </li>
     )
 }
 

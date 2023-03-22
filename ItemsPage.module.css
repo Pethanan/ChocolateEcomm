@@ -1,0 +1,22 @@
+.available-items
+{
+    background-color: rgb(225, 225, 234);
+    margin: 0 auto;
+    margin-top: 40px;
+    border-radius: 5px;
+    margin-bottom: 60px;
+
+}
+    
+.mainrow
+{
+    background-color:rgba(94, 94, 184, 0.911);
+    color: rgb(250, 250, 250);
+    font-weight: bolder;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-bottom:  10px;
+        padding: 20px;
+
+
+}
