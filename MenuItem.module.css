@@ -1,4 +1,7 @@
 .menu-item
 {
-    margin-bottom: 20px;
+    background-color: rgb(182, 182, 216);
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 8px;
 }

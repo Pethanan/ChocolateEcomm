@@ -1,8 +1,10 @@
 .menu
 {
     list-style: none;
+        padding-bottom: 50px;
 }
 .cart-title
 {
     margin-bottom: 50px;
+    text-decoration: underline;
 }

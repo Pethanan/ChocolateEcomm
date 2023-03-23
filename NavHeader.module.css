@@ -3,8 +3,9 @@
   display: flex;
     justify-content: space-between;
     padding: 15px 50px;
-    background-color: rgba(10, 10, 30, 0.872);
+    background-color: rgba(29, 29, 91, 0.909);
     color: white;
+        font-weight: bold;
 }
 
 .links

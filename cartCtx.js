@@ -30,7 +30,7 @@ export const CartCtxProvider = (props) => {
         let updatedCartItems;
 
         if (itemToUpdate) {
-            const updatedItem = { ...itemToUpdate, quantity: itemToUpdate.quantity + quantity };
+            const updatedItem = { ...item, quantity: itemToUpdate.quantity + quantity, itemTotalAmount: itemToUpdate.itemTotalAmount + (item.price * quantity) };
             updatedCartItems = [...cartItems];
             updatedCartItems[itemToUpdateIndex] = updatedItem;
             const amountUpdate = totalCartAmount + (updatedItem.quantity * item.price);
@@ -38,7 +38,7 @@ export const CartCtxProvider = (props) => {
             setTotalCartAmount(amountUpdate);
         }
         else {
-            const updatedItem = { ...item, quantity: quantity };
+            const updatedItem = { ...item, quantity: quantity, itemTotalAmount: item.price * quantity };
             updatedCartItems = [...cartItems, updatedItem];
             console.log(updatedCartItems)
             const amountUpdate = totalCartAmount + quantity * item.price;
@@ -49,8 +49,15 @@ export const CartCtxProvider = (props) => {
     }
 
     const addToMenuHandler = (item) => {
-        const updatedMenu = [...menuItems, item];
-        setMenuItems(updatedMenu)
+        const existingItemIndex = menuItems.findIndex((itm) => itm.id === item.id)
+        if (existingItemIndex === -1) {
+            const updatedMenu = [...menuItems, item];
+            setMenuItems(updatedMenu)
+        }
+        else {
+            alert("Selected Item is already Available in the available items list")
+        }
+
     }
 
 
